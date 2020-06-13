@@ -80,3 +80,13 @@ echo "Welcome to Arch Linux | Bare"
 clear
 bash start-arch.sh
 echo "done"
+echo "enter the name of the non root user"
+read nonrootuser
+useradd $nonrootuser
+passwd $nonrootuser
+echo "user has been added and given a password but can use su or sudo, you will have to tweak some things in order to be able to use sudo"
+echo "you will have to conigure this yourself"
+echo "install your favourite text editor and edit the /etc/sudoers"
+echo "add the following line"
+echo "$nonrootuser ALL=(ALL) ALL"
+echo "under the ## user privilege spesification and save the file"
